@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hospital.registration.mapper.DocMapper">
+    <select id="getDoctorList" resultType="com.hospital.registration.entities.Doctor">
+        select t1.id, t1.name, t1.gender, t1.email, t1.price, t1.phoneNumber, t1.imageUrl, t1.title, t1.des, t1.available from tb_doctor t1
+        inner join tb_depts t2 on t1.dept_id=t2.id and t2.name=#{deptName}
+    </select>
+
+    <insert id="addDoc" useGeneratedKeys="true" keyProperty="id"
+        parameterType="com.hospital.registration.entities.Doctor">
+        insert into tb_doctor(`name`, gender, price, email, phoneNumber,imageUrl, title, des, available, dept_id)
+        values (#{doc.name}, #{doc.gender}, #{doc.price}, #{doc.email}, #{doc.phoneNumber}, #{doc.imageUrl}
+        , #{doc.title}, #{doc.des}, #{doc.available}, #{doc.deptId})
+    </insert>
+</mapper>

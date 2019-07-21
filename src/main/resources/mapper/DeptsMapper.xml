@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hospital.registration.mapper.DeptsMapper">
+    <select id="getDeptsByTypeName" resultType="com.hospital.registration.entities.Department">
+        select t1.id, t1.name from tb_depts t1 inner join tb_depts_type t2
+        on t1.dept_type_id=t2.id and t2.name=#{typeName}
+    </select>
+
+    <insert id="addDept" useGeneratedKeys="true" keyProperty="id"
+            parameterType="com.hospital.registration.entities.Department">
+        insert into tb_depts(`name`, location, dept_type_id) values (#{dept.name}, #{dept.location}, #{dept.deptTypeId})
+    </insert>
+
+    <insert id="addDeptsType" useGeneratedKeys="true" keyProperty="id"
+            parameterType="com.hospital.registration.entities.DepartmentType">
+        insert into tb_depts_type(`name`) values (#{departmentType.name})
+    </insert>
+</mapper>

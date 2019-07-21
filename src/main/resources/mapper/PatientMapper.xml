@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hospital.registration.mapper.PatientMapper">
+    <select id="getPasswordByPhoneNumber" resultType="String">
+        select `password` from tb_patient where phoneNumber = #{phoneNumber}
+    </select>
+
+    <select id="getPatientInfo" resultType="com.hospital.registration.entities.Patient">
+        select id, `name`, idCard, gender, phoneNumber, email, `password` from tb_patient where phoneNumber = #{phoneNumber}
+    </select>
+
+    <insert id="addPatient" useGeneratedKeys="true" keyProperty="id"
+        parameterType="com.hospital.registration.entities.Patient">
+        insert into tb_patient(phoneNumber, `password`)  values (#{patient.phoneNumber}, #{patient.password})
+    </insert>
+
+    <update id="updatePatient">
+        update tb_patient set `name` = #{patient.name}, idCard = #{patient.idCard}, gender = #{patient.gender}, email = #{patient.email}
+        where phoneNumber = #{patient.phoneNumber}
+    </update>
+</mapper>

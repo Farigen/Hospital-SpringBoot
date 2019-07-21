@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hospital.registration.mapper.PatientOrderMapper">
+    <insert id="addPatientOrder" useGeneratedKeys="true" keyProperty="id"
+            parameterType="com.hospital.registration.entities.PatientOrder">
+        insert into tb_patient_order(register_id, patient_id, status, cancel_date)
+        values (#{patientOrder.registerId}, #{patientOrder.patientId}, #{patientOrder.status}, #{patientOrder.cancelDate})
+    </insert>
+    <select id="getRecord" resultType="com.hospital.registration.entities.Record">
+        select t1.id, t1.name from tb_depts t1 inner join tb_depts_type t2
+        on t1.dept_type_id=t2.id and t2.name=#{typeName}
+    </select>
+</mapper>
