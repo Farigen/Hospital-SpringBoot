@@ -17,4 +17,13 @@ public class PatientOrder {
     private Integer patientId;
     private Integer status;
     private Date cancelDate;
+
+    public PatientOrder() {
+    }
+
+    public PatientOrder(Integer registerId, Integer patientId, Integer status) {
+        this.registerId = registerId;
+        this.patientId = patientId;
+        this.status = status;
+    }
 }

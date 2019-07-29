@@ -23,8 +23,16 @@ public interface PatientMapper {
      * @return com.hospital.registration.entities.Patient
      * @des 用于获取和修改个人信息
      */
-    Patient getPatientInfo(String phoneNumber);
+    Patient getPatientInfoByPhoneNumber(@Param("phoneNumber") String phoneNumber);
 
+    /**
+     * @author Lucas
+     * @date 2019/7/28
+     * @param [userId]
+     * @return com.hospital.registration.entities.Patient
+     * @des
+     */
+    Patient getPatientInfoByPatientId(@Param("userId") Integer userId);
     /**
      * @author Lucas
      * @date 2019/7/14
@@ -42,4 +50,5 @@ public interface PatientMapper {
      * @des
      */
     Integer updatePatient(@Param("patient") Patient patient);
+
 }

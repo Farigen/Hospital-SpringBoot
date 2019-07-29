@@ -32,12 +32,6 @@ public class DocController {
         return doctorService.getDocsByDeptName(deptName);
     }
 
-    @RequestMapping("/getRegisterByDoc")
-    public List<Register> getRegisterByDoc(String docName){
-
-        return null;
-    }
-
     //temp
     @ResponseBody
     @RequestMapping("/addDoc")

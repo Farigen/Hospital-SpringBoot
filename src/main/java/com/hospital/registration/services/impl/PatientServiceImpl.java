@@ -24,8 +24,13 @@ public class PatientServiceImpl implements PatientService {
     }
 
     @Override
-    public Patient getPatientInfo(String phoneNumber) {
-        return patientMapper.getPatientInfo(phoneNumber);
+    public Patient getPatientInfoByPhoneNumber(String phoneNumber) {
+        return patientMapper.getPatientInfoByPhoneNumber(phoneNumber);
+    }
+
+    @Override
+    public Patient getPatientInfoByPatientId(Integer id) {
+        return patientMapper.getPatientInfoByPatientId(id);
     }
 
     @Override

@@ -5,8 +5,12 @@
         select `password` from tb_patient where phoneNumber = #{phoneNumber}
     </select>
 
-    <select id="getPatientInfo" resultType="com.hospital.registration.entities.Patient">
+    <select id="getPatientInfoByPhoneNumber" resultType="com.hospital.registration.entities.Patient">
         select id, `name`, idCard, gender, phoneNumber, email, `password` from tb_patient where phoneNumber = #{phoneNumber}
+    </select>
+
+    <select id="getPatientInfoByPatientId" resultType="com.hospital.registration.entities.Patient">
+        select id, `name`, idCard, gender, phoneNumber, email, birthday,  `password` from tb_patient where id = #{userId}
     </select>
 
     <insert id="addPatient" useGeneratedKeys="true" keyProperty="id"
@@ -15,7 +19,7 @@
     </insert>
 
     <update id="updatePatient">
-        update tb_patient set `name` = #{patient.name}, idCard = #{patient.idCard}, gender = #{patient.gender}, email = #{patient.email}
-        where phoneNumber = #{patient.phoneNumber}
+        update tb_patient set `name` = #{patient.name}, idCard = #{patient.idCard}, gender = #{patient.gender}, phoneNumber= #{patient.phoneNumber}
+        ,email = #{patient.email}, birthday = #{patient.birthday} where id = #{patient.id}
     </update>
 </mapper>

@@ -19,8 +19,16 @@ public interface PatientService {
      * @return com.hospital.registration.entities.Patient
      * @des 用于获取和修改个人信息
      */
-    Patient getPatientInfo(String phoneNumber);
+    Patient getPatientInfoByPhoneNumber(String phoneNumber);
 
+    /**
+     * @author Lucas
+     * @date 2019/7/28
+     * @param [id]
+     * @return com.hospital.registration.entities.Patient
+     * @des
+     */
+    Patient getPatientInfoByPatientId(Integer id);
     /**
      * @author Lucas
      * @date 2019/7/14

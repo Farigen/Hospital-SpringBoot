@@ -4,6 +4,7 @@ import com.hospital.registration.entities.PatientOrder;
 import com.hospital.registration.entities.Record;
 import com.hospital.registration.entities.User;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -17,7 +18,7 @@ public interface PatientOrderMapper {
      * @return java.lang.Integer
      * @des
      */
-    Integer addPatientOrder(PatientOrder patientOrder);
+    Integer addPatientOrder(@Param("patientOrder") PatientOrder patientOrder);
 
     /**
      * @author Lucas
@@ -26,5 +27,5 @@ public interface PatientOrderMapper {
      * @return com.hospital.registration.entities.Record
      * @des
      */
-    Record getRecord(String phoneNumber);
+    List<Record> getRecordsByPatientId(@Param("patientId")Integer patientId);
 }

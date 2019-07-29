@@ -1,5 +1,6 @@
 package com.hospital.registration.controller;
 
+import com.hospital.registration.annotation.UserLoginToken;
 import com.hospital.registration.entities.Department;
 import com.hospital.registration.entities.DepartmentType;
 import com.hospital.registration.services.DeptsService;
@@ -22,6 +23,7 @@ public class DeptsController {
 
     @Autowired
     DeptsService deptsService;
+
 
     @ResponseBody
     @RequestMapping("/getDeptsByTypeName")
