@@ -11,6 +11,7 @@
     <groupId>com.hospital</groupId>
     <artifactId>registration</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
     <name>registration</name>
     <description>Demo project for Spring Boot</description>
 
@@ -97,11 +98,11 @@
             </exclusions>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.apache.shiro/shiro-spring -->
-        <dependency>
+       <!-- <dependency>
             <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-spring</artifactId>
             <version>1.4.0</version>
-        </dependency>
+        </dependency>-->
 
         <!--redis-->
         <dependency>
@@ -148,6 +149,14 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.1.7.RELEASE</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

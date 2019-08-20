@@ -5,10 +5,10 @@ import com.hospital.registration.annotation.UserLoginToken;
 import com.hospital.registration.entities.Patient;
 import com.hospital.registration.services.TokenService;
 import com.hospital.registration.services.impl.PatientServiceImpl;
-import org.apache.shiro.SecurityUtils;
+/*import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
-import org.apache.shiro.subject.Subject;
+import org.apache.shiro.subject.Subject;*/
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;

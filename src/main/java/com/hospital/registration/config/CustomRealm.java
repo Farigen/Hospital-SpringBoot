@@ -1,3 +1,4 @@
+/*
 package com.hospital.registration.config;
 
 import com.hospital.registration.services.PatientService;
@@ -12,12 +13,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.HashSet;
 import java.util.Set;
 
+*/
 /**
  * @program: registration
  * @description:
  * @author: Lucas
  * @create: 2019/07/27 16:16
- */
+ *//*
+
 public class CustomRealm extends AuthorizingRealm {
 
     @Autowired
@@ -53,3 +56,4 @@ public class CustomRealm extends AuthorizingRealm {
         return new SimpleAuthenticationInfo(userName, password,getName());
     }
 }
+*/
